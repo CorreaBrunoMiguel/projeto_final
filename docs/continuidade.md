@@ -69,7 +69,7 @@ Bruno confirmou a configuração de entrada automática de issues abertas do rep
 
 ## Estado atual
 
-**Etapa:** preparação, sem implementação do notebook iniciada.
+**Etapa:** preparação concluída para iniciar P01; backlog criado, sem implementação do notebook iniciada.
 
 **Ambiente informado pelo terminal de Bruno:**
 
@@ -82,13 +82,34 @@ Bruno confirmou a configuração de entrada automática de issues abertas do rep
 | JupyterLab | 4.6.2 |
 | Repositório local | /home/bruno/Desktop/senai/projeto_final |
 
-Os caminhos absolutos acima identificam o ambiente administrativo; não devem ser usados na leitura de dados do notebook. Ainda falta confirmar o kernel e as bibliotecas necessárias.
+Os caminhos absolutos acima identificam o ambiente administrativo; não devem ser usados na leitura de dados do notebook. O kernelspec sc_tech foi conferido por Bruno: nome de exibição **Python SC_TECH**, com argv apontando para o interpretador do ambiente acima. As importações de NumPy, pandas, Matplotlib, Seaborn, scikit-learn e imbalanced-learn passaram. Versões informadas: NumPy 2.5.1; pandas 3.0.5; Matplotlib 3.11.1; Seaborn 0.13.2; scikit-learn 1.9.0; imbalanced-learn 0.14.2; ipykernel 7.3.0. A execução do notebook no kernel será conferida durante a construção.
 
 **Concluído:** enunciado preservado; repositório clonado por Bruno; CSV e anotações enviados no commit `3293f00778755a9e0cacf13682aa938f0e6959d2` e integrados em develop pelo PR #3; integridade dos dois arquivos conferida por hashes Git; quadro criado e configurações informadas por Bruno.
 
 **Última demanda administrativa:** [P00 — Registrar acordos e continuidade](https://github.com/CorreaBrunoMiguel/projeto_final/issues/4), concluída com documento integrado e entrada automática confirmada por Bruno.
 
-**Próxima ação:** conferir os kernels disponíveis e as bibliotecas do ambiente SC_TECH. Depois, ler as anotações da engenharia e preparar as demandas de implementação; não iniciar a análise ou a modelagem antes de concluir a preparação.
+**Próxima ação:** iniciar [P01 — Preparar a estrutura do notebook principal](https://github.com/CorreaBrunoMiguel/projeto_final/issues/7), criando a branch feat/p01-notebook-base a partir de origin/develop atualizada. Nenhuma implementação do notebook foi feita por Orion.
+
+## Plano de execução
+
+As demandas são sequenciais; os cards contêm o roteiro completo e a conversa avança por partes. Manter somente uma demanda de implementação em andamento. A divisão foi preparada a partir do enunciado, das anotações da engenharia e do cabeçalho do CSV; a análise estatística será feita por Bruno.
+
+| Demanda | Issue | Branch |
+| --- | --- | --- |
+| P01 — Preparar a estrutura do notebook principal | [#7](https://github.com/CorreaBrunoMiguel/projeto_final/issues/7) | `feat/p01-notebook-base` |
+| P02 — Inspecionar os dados e documentar o papel das colunas | [#8](https://github.com/CorreaBrunoMiguel/projeto_final/issues/8) | `feat/p02-inspecao-dados` |
+| P03 — Construir os três gráficos de EDA e interpretar os resultados | [#9](https://github.com/CorreaBrunoMiguel/projeto_final/issues/9) | `feat/p03-eda-graficos` |
+| P04 — Tratar duplicados, diagnosticar outliers e imputar sem vazamento | [#10](https://github.com/CorreaBrunoMiguel/projeto_final/issues/10) | `feat/p04-tratamento-dados` |
+| P05 — Criar e validar uma variável numérica derivada | [#11](https://github.com/CorreaBrunoMiguel/projeto_final/issues/11) | `feat/p05-feature-engineering` |
+| P06 — Preparar representações, balancear o treino e escalonar o KNN | [#12](https://github.com/CorreaBrunoMiguel/projeto_final/issues/12) | `feat/p06-balanceamento-escalonamento` |
+| P07 — Treinar as configurações do KNN e registrar acurácias | [#13](https://github.com/CorreaBrunoMiguel/projeto_final/issues/13) | `feat/p07-knn` |
+| P08 — Treinar as configurações da árvore e comparar generalização | [#14](https://github.com/CorreaBrunoMiguel/projeto_final/issues/14) | `feat/p08-arvore-decisao` |
+| P09 — Comparar os melhores modelos e formular o veredito | [#15](https://github.com/CorreaBrunoMiguel/projeto_final/issues/15) | `feat/p09-avaliacao-final` |
+| P10 — Revisar reprodutibilidade, README e entrega em main | [#16](https://github.com/CorreaBrunoMiguel/projeto_final/issues/16) | `docs/p10-entrega-final` |
+
+P04 antecipa a divisão antes de aprender as estatísticas de imputação; a Fase 4 documenta a mesma divisão. Essa adequação evita vazamento e preserva as sete fases editoriais. P07–P09 exigem explicitar a limitação se o teste também for utilizado na seleção, conforme a comparação solicitada pelo enunciado.
+
+Referências técnicas: [scikit-learn — práticas e vazamento](https://scikit-learn.org/1.9/common_pitfalls.html) e [imbalanced-learn — reamostragem e vazamento](https://imbalanced-learn.org/stable/common_pitfalls.html).
 
 ## Registro breve de decisões
 
@@ -98,5 +119,6 @@ Os caminhos absolutos acima identificam o ambiente administrativo; não devem se
 | 11/10/2026 | Bruno delimitou uma apresentação concisa para o professor e retirou o vídeo do escopo desta frente; esclareceu o prazo vigente de 13/10. |
 | 11/10/2026 | Bruno clonou o repositório, organizou os arquivos conforme orientação e enviou o commit 3293f00. Orion conferiu os arquivos contra os anexos e integrou o PR #3. |
 | 11/10/2026 | Bruno criou o Projects #4, configurou as quatro colunas e confirmou que P00 apareceu automaticamente em A fazer. |
+| 11/10/2026 | Bruno conferiu o kernelspec Python SC_TECH e executou as importações sem erros. Orion leu as fontes e estruturou P01–P10, sem implementar o notebook. |
 
 Atualizar o estado ao encerrar uma demanda. Acrescentar ao registro somente decisões ou intervenções que mudem a construção. Em um novo Work, ler este documento, o enunciado e a issue ativa, conferir o estado remoto e retomar a próxima ação.
