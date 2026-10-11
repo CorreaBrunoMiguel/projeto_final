@@ -32,6 +32,8 @@ O notebook deve ser conciso, legível e fácil de conferir pelo professor. Apres
 - Uma issue pode orientar várias células relacionadas do notebook. Não criar uma issue por célula.
 - Cada demanda informa objetivo, requisito atendido, sequência de construção, entregável e critérios de conclusão.
 - Bruno implementa seguindo os cards; conclusões e decisões dependentes dos dados são formuladas durante a execução.
+- Trabalhar em duas passagens dentro de cada PXX: primeiro concluir o código e as inspeções satisfatoriamente; depois organizar as células Markdown nos pontos úteis à leitura. Explicações podem abranger várias células relacionadas.
+- As observações de Bruno são checkpoints de entendimento e matéria-prima para a narrativa. Sugestões complementares são discutidas e encaminhadas ao card apropriado, sem abrir automaticamente novas demandas.
 - A revisão incide sobre os entregáveis; não há provas, notas ou avaliações de aprendizagem por Orion.
 - Quando uma resposta indicar falta de compreensão relevante, esclarecer o ponto antes de avançar.
 - Evitar transcrever toda a conversa ou registrar tentativas sem utilidade para a continuidade.
@@ -50,6 +52,7 @@ Este documento e as issues são registros administrativos preparados com IA. Nã
 
 - Criar branches de tarefas a partir de `develop` atualizada.
 - Fazer commits pequenos, com mensagens diretas.
+- Usar GitHub como canal principal de revisão: Bruno executa do início ao fim em kernel limpo, salva as saídas e envia commit/push na branch da tarefa; informa o hash e o status. Orion revisa esse commit antes do merge. O envio não encerra o card; anexos no chat são alternativa pontual.
 - Integrar alterações revisadas por PR em `develop`.
 - Preservar as branches após o merge, conforme o enunciado.
 - Integrar o projeto final em `main` quando a entrega estiver revisada.
@@ -69,7 +72,7 @@ Bruno confirmou a configuração de entrada automática de issues abertas do rep
 
 ## Estado atual
 
-**Etapa:** estrutura da P01 revisada; próxima demanda de implementação: P02. A integração desta branch em develop encerra P01.
+**Etapa:** P02 revisada no commit `5d12c303393dfa232e16a13734d088fe69098fc7`; a integração pelo [PR #19](https://github.com/CorreaBrunoMiguel/projeto_final/pull/19) encerra a demanda. Próxima implementação: P03.
 
 **Ambiente informado pelo terminal de Bruno:**
 
@@ -88,9 +91,11 @@ Os caminhos absolutos acima identificam o ambiente administrativo; não devem se
 
 **Última demanda administrativa:** [P00 — Registrar acordos e continuidade](https://github.com/CorreaBrunoMiguel/projeto_final/issues/4), concluída com documento integrado e entrada automática confirmada por Bruno.
 
-**Último entregável revisado:** [P01 — Estrutura do notebook principal](https://github.com/CorreaBrunoMiguel/projeto_final/issues/7), commit de Bruno `2a43f890645ad53563a0e338886b3c1def4635b2`: notebook com nove células Markdown (apresentação, fontes e sete fases), kernel Python SC_TECH e .gitignore. Links relativos e estrutura conferidos; não há células de código nem resultados analíticos nesta etapa.
+**Último entregável revisado:** [P02 — Inspeção e papel das colunas](https://github.com/CorreaBrunoMiguel/projeto_final/issues/8), commit de Bruno `5d12c303393dfa232e16a13734d088fe69098fc7`. O notebook tem 19 células, sendo seis de código com contagens de execução de 1 a 6 e saídas salvas sem erros registrados. Orion conferiu o código, as tabelas salvas e a correspondência dos textos com os resultados; não executou independentemente o ambiente SC_TECH de Bruno.
 
-**Próxima ação:** após a integração de P01 em develop, iniciar [P02 — Inspecionar os dados e documentar o papel das colunas](https://github.com/CorreaBrunoMiguel/projeto_final/issues/8), criando a branch `feat/p02-inspecao-dados` a partir de `origin/develop` atualizada. Bruno escreve e executa as células de inspeção, por etapas.
+**Representação e achados da P02:** o CSV original tem 10.000 registros e 14 campos. Bruno passou a usar `udi` como índice na leitura; `df` tem 13 colunas de dados, mais o índice. `df_origin` guarda a leitura e `df` é a cópia de trabalho. As ausências das duas temperaturas, rotação e torque coincidem em 500 linhas (5%); as quatro medidas estão presentes nas outras 9.500 linhas. O alvo está completo: 9.661 registros normais e 339 falhas (3,39%). Tipos L/M/H: 6.000/2.997/1.003 registros e 235/83/21 falhas. Os textos documentam identificadores, medidas, categoria, alvo e proibição de usar os cinco indicadores históricos como preditores ou em atributos derivados.
+
+**Próxima ação:** após a integração de P02 em develop, iniciar [P03 — Três gráficos de EDA e interpretação](https://github.com/CorreaBrunoMiguel/projeto_final/issues/9), criando a branch `feat/p03-eda-graficos` a partir de `origin/develop` atualizada. Definir o propósito e a medida física do primeiro gráfico com Bruno; orientar um bloco por vez. Não importar como decisão deste reinício a escolha de gráficos feita no projeto antigo.
 
 ## Plano de execução
 
@@ -123,5 +128,7 @@ Referências técnicas: [scikit-learn — práticas e vazamento](https://scikit-
 | 11/10/2026 | Bruno criou o Projects #4, configurou as quatro colunas e confirmou que P00 apareceu automaticamente em A fazer. |
 | 11/10/2026 | Bruno conferiu o kernelspec Python SC_TECH e executou as importações sem erros. Orion leu as fontes e estruturou P01–P10, sem implementar o notebook. |
 | 11/10/2026 | A pedido de Bruno, Orion redigiu a apresentação, a introdução, as fontes e os cabeçalhos de P01. Bruno adotou a estrutura, montou e salvou o notebook no JupyterLab e enviou o commit 2a43f89. Orion orientou o .gitignore e conferiu a estrutura. O critério de redação própria da introdução foi ajustado para refletir essa assistência; nenhuma análise, conclusão ou célula de código foi produzida nesta etapa. |
+| 11/10/2026 | Bruno escreveu as inspeções de P02, propôs manter uma cópia de trabalho e confirmou pela contagem por linha que as ausências coincidem. Construiu os resumos global e por tipo, incluindo taxas de falha, e identificou o desbalanceamento do alvo. Orion forneceu orientação conceitual e organizou os textos a partir desses checkpoints e das fontes; Bruno inseriu os textos e enviou o commit 5d12c30, usando udi como índice. |
+| 11/10/2026 | Bruno definiu a narrativa após a conclusão do código de cada PXX e escolheu GitHub como canal principal de revisão. Sugeriu comparar falhas nos registros com ausências; Orion encaminhou e registrou esse diagnóstico complementar no card P04 (#10). Comparar a base antes/depois do tratamento permanece uma sugestão a discutir em P04, não uma nova demanda obrigatória. |
 
 Atualizar o estado ao encerrar uma demanda. Acrescentar ao registro somente decisões ou intervenções que mudem a construção. Em um novo Work, ler este documento, o enunciado e a issue ativa, conferir o estado remoto e retomar a próxima ação.
