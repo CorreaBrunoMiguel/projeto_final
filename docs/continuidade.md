@@ -69,7 +69,7 @@ Bruno confirmou a configuração de entrada automática de issues abertas do rep
 
 ## Estado atual
 
-**Etapa:** preparação concluída para iniciar P01; backlog criado, sem implementação do notebook iniciada.
+**Etapa:** estrutura da P01 revisada; próxima demanda de implementação: P02. A integração desta branch em develop encerra P01.
 
 **Ambiente informado pelo terminal de Bruno:**
 
@@ -88,7 +88,9 @@ Os caminhos absolutos acima identificam o ambiente administrativo; não devem se
 
 **Última demanda administrativa:** [P00 — Registrar acordos e continuidade](https://github.com/CorreaBrunoMiguel/projeto_final/issues/4), concluída com documento integrado e entrada automática confirmada por Bruno.
 
-**Próxima ação:** iniciar [P01 — Preparar a estrutura do notebook principal](https://github.com/CorreaBrunoMiguel/projeto_final/issues/7), criando a branch feat/p01-notebook-base a partir de origin/develop atualizada. Nenhuma implementação do notebook foi feita por Orion.
+**Último entregável revisado:** [P01 — Estrutura do notebook principal](https://github.com/CorreaBrunoMiguel/projeto_final/issues/7), commit de Bruno `2a43f890645ad53563a0e338886b3c1def4635b2`: notebook com nove células Markdown (apresentação, fontes e sete fases), kernel Python SC_TECH e .gitignore. Links relativos e estrutura conferidos; não há células de código nem resultados analíticos nesta etapa.
+
+**Próxima ação:** após a integração de P01 em develop, iniciar [P02 — Inspecionar os dados e documentar o papel das colunas](https://github.com/CorreaBrunoMiguel/projeto_final/issues/8), criando a branch `feat/p02-inspecao-dados` a partir de `origin/develop` atualizada. Bruno escreve e executa as células de inspeção, por etapas.
 
 ## Plano de execução
 
@@ -120,5 +122,6 @@ Referências técnicas: [scikit-learn — práticas e vazamento](https://scikit-
 | 11/10/2026 | Bruno clonou o repositório, organizou os arquivos conforme orientação e enviou o commit 3293f00. Orion conferiu os arquivos contra os anexos e integrou o PR #3. |
 | 11/10/2026 | Bruno criou o Projects #4, configurou as quatro colunas e confirmou que P00 apareceu automaticamente em A fazer. |
 | 11/10/2026 | Bruno conferiu o kernelspec Python SC_TECH e executou as importações sem erros. Orion leu as fontes e estruturou P01–P10, sem implementar o notebook. |
+| 11/10/2026 | A pedido de Bruno, Orion redigiu a apresentação, a introdução, as fontes e os cabeçalhos de P01. Bruno adotou a estrutura, montou e salvou o notebook no JupyterLab e enviou o commit 2a43f89. Orion orientou o .gitignore e conferiu a estrutura. O critério de redação própria da introdução foi ajustado para refletir essa assistência; nenhuma análise, conclusão ou célula de código foi produzida nesta etapa. |
 
 Atualizar o estado ao encerrar uma demanda. Acrescentar ao registro somente decisões ou intervenções que mudem a construção. Em um novo Work, ler este documento, o enunciado e a issue ativa, conferir o estado remoto e retomar a próxima ação.
