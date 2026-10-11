@@ -65,7 +65,7 @@ Este documento e as issues são registros administrativos preparados com IA. Nã
 
 Manter uma demanda de implementação em andamento por vez. Orion gerencia as issues pela conexão GitHub disponível; essa conexão não expõe administração de Projects. A configuração do quadro e mudanças manuais de status são executadas por Bruno conforme orientação.
 
-Bruno confirmou a configuração de entrada automática de issues abertas do repositório, com filtro `is:issue is:open`, e das quatro opções de Status, com A fazer como padrão. A configuração foi informada na conversa; a entrada automática ainda precisa ser observada com uma issue real.
+Bruno confirmou a configuração de entrada automática de issues abertas do repositório, com filtro `is:issue is:open`, e das quatro opções de Status, com A fazer como padrão. Bruno confirmou que a issue P00 apareceu automaticamente na coluna A fazer do Projects #4; a entrada automática e o status inicial foram observados por ele.
 
 ## Estado atual
 
@@ -86,9 +86,9 @@ Os caminhos absolutos acima identificam o ambiente administrativo; não devem se
 
 **Concluído:** enunciado preservado; repositório clonado por Bruno; CSV e anotações enviados no commit `3293f00778755a9e0cacf13682aa938f0e6959d2` e integrados em develop pelo PR #3; integridade dos dois arquivos conferida por hashes Git; quadro criado e configurações informadas por Bruno.
 
-**Demanda administrativa atual:** [P00 — Registrar acordos e continuidade](https://github.com/CorreaBrunoMiguel/projeto_final/issues/4).
+**Última demanda administrativa:** [P00 — Registrar acordos e continuidade](https://github.com/CorreaBrunoMiguel/projeto_final/issues/4), concluída com documento integrado e entrada automática confirmada por Bruno.
 
-**Próxima ação:** confirmar que P00 apareceu no Projects. Depois, preparar as demandas de implementação com base no enunciado e nas anotações da engenharia, e conferir kernel e dependências antes do primeiro card técnico.
+**Próxima ação:** conferir os kernels disponíveis e as bibliotecas do ambiente SC_TECH. Depois, ler as anotações da engenharia e preparar as demandas de implementação; não iniciar a análise ou a modelagem antes de concluir a preparação.
 
 ## Registro breve de decisões
 
@@ -97,6 +97,6 @@ Os caminhos absolutos acima identificam o ambiente administrativo; não devem se
 | 11/10/2026 | Bruno decidiu reiniciar no repositório projeto_final, com autoria do código e decisões técnicas próprias, orientação por cards e revisão de entregáveis. |
 | 11/10/2026 | Bruno delimitou uma apresentação concisa para o professor e retirou o vídeo do escopo desta frente; esclareceu o prazo vigente de 13/10. |
 | 11/10/2026 | Bruno clonou o repositório, organizou os arquivos conforme orientação e enviou o commit 3293f00. Orion conferiu os arquivos contra os anexos e integrou o PR #3. |
-| 11/10/2026 | Bruno criou o Projects #4 e confirmou a configuração de entrada automática e das quatro colunas. |
+| 11/10/2026 | Bruno criou o Projects #4, configurou as quatro colunas e confirmou que P00 apareceu automaticamente em A fazer. |
 
 Atualizar o estado ao encerrar uma demanda. Acrescentar ao registro somente decisões ou intervenções que mudem a construção. Em um novo Work, ler este documento, o enunciado e a issue ativa, conferir o estado remoto e retomar a próxima ação.
