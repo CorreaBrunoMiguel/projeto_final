@@ -74,7 +74,21 @@ Bruno confirmou a configuração de entrada automática de issues abertas do rep
 
 ## Estado atual
 
-**Etapa:** P06 concluída, revisada no commit `ae17ebc8356c3e5724ea7b14233267551d4e20fe` e integrada em `develop` pelo [PR #25](https://github.com/CorreaBrunoMiguel/projeto_final/pull/25), merge `1f13a8e9037593d82a9329b5bc6dea65fc1d49c9`. A branch `feat/p06-balanceamento-escalonamento` foi preservada. Próxima demanda: P07 (#13); a criação da branch local ainda será confirmada por Bruno. O status visual do Projects é atualizado por Bruno.
+**Etapa:** P07 implementada localmente na branch `feat/p07-knn`, cuja criação a partir de `origin/develop` foi confirmada por Bruno. As duas células Markdown da P07 foram inseridas; falta conferir execução integral, saídas atualizadas e commit/push para revisão. Não recriar a branch nem repetir a implementação. P06 permanece concluída e integrada em develop pelo PR #25 (commit revisado `ae17ebc8356c3e5724ea7b14233267551d4e20fe`, merge `1f13a8e9037593d82a9329b5bc6dea65fc1d49c9`); sua branch foi preservada.
+
+**Checkpoint local da P07 — 13/10/2026:** Bruno implementou KNN com K = 3, 5 e 7, votação uniforme, ajuste em `X_train_knn`/`y_train_resampled`, scores no treino reamostrado e em `X_test_knn`/`y_test`. Guardou os modelos em `modelos_knn` e a tabela em `resultados_knn`, mantendo os valores completos e formatando percentuais somente na apresentação. Resultados informados na conversa, ainda sem revisão do notebook completo em commit:
+
+| K | Acurácia treino reamostrado | Acurácia teste |
+| --- | ---: | ---: |
+| 3 | 94,17% | 93,60% |
+| 5 | 93,36% | 94,90% |
+| 7 | 92,62% | 95,10% |
+
+Bruno compreendeu que a contribuição individual de um vizinho é maior com K pequeno e que a diferença de acurácia, isoladamente, não comprova sobreajuste. A narrativa registra o aumento da acurácia de teste com K, a composição distinta das classes (20% de falhas no treino reamostrado e 3,4% no teste), a referência constante de classe normal de 96,60% no teste e a limitação de usar o teste para comparar e indicar K. Não afirmar superioridade do KNN sobre essa referência nem chamar a seleção de validação independente. Bruno confirmou a inserção dos textos antes do código e depois da tabela.
+
+O último pedido operacional foi reiniciar o kernel, executar todas as células em ordem, salvar e enviar `git status --short --branch` e `git diff --stat`. Essas saídas e um hash da P07 ainda não foram informados. Não assumir execução limpa, revisão ou integração da P07.
+
+**Pedido posterior ao projeto:** em 13/10, Bruno pediu um lembrete para trabalhar com Orion em um modelo de ensino com papel de professor e cursos acadêmicos avançados, no estilo de pós-doutorado. O pedido está registrado na P10 (#16), fora do escopo atual. Já existe um lembrete por evento de conclusão técnica em main, chamado **Planejar ensino avançado**; não criar outro nem iniciar o planejamento agora.
 
 **Ambiente informado pelo terminal de Bruno:**
 
@@ -105,7 +119,7 @@ Os caminhos absolutos acima identificam o ambiente administrativo; não devem se
 
 **Representação e achados da P02:** o CSV original tem 10.000 registros e 14 campos. Bruno passou a usar `udi` como índice na leitura; `df` tem 13 colunas de dados, mais o índice. `df_origin` guarda a leitura e `df` é a cópia de trabalho. As ausências das duas temperaturas, rotação e torque coincidem em 500 linhas (5%); as quatro medidas estão presentes nas outras 9.500 linhas. O alvo está completo: 9.661 registros normais e 339 falhas (3,39%). Tipos L/M/H: 6.000/2.997/1.003 registros e 235/83/21 falhas. Os textos documentam identificadores, medidas, categoria, alvo e proibição de usar os cinco indicadores históricos como preditores ou em atributos derivados.
 
-**Próxima ação:** Bruno atualiza as referências remotas, cria `feat/p07-knn` a partir de `origin/develop` e confirma o status. Retomar [P07 — Treinar as configurações do KNN e registrar acurácias](https://github.com/CorreaBrunoMiguel/projeto_final/issues/13), na Fase 6: escolher pelo menos três valores ímpares de K, treinar com `X_train_knn`/`y_train_resampled`, medir treino e teste e guardar modelos/resultados. Tornar explícita a convenção da acurácia de treino. A composição de classes difere entre treino reamostrado (20% de falhas) e teste (3,4%); diferenças de acurácia não isolam, sozinhas, sobreajuste. Se o teste orientar a escolha de K, registrar a limitação prevista no card, sem chamá-lo de validação independente. Avançar por partes e preservar a autoria de Bruno.
+**Próxima ação:** retomar o fechamento da [P07 — Experimentos KNN](https://github.com/CorreaBrunoMiguel/projeto_final/issues/13), na branch local já criada `feat/p07-knn`. Aguardar a confirmação da execução em kernel reiniciado e as saídas de `git status --short --branch` e `git diff --stat`; então orientar commit/push do notebook, obter o hash, revisar código, saídas e narrativa e integrar por PR em develop se os critérios forem atendidos. Preservar a branch. Depois iniciar P08 (#14), sem reiniciar o planejamento ou antecipar a implementação da árvore.
 
 ## Plano de execução
 
@@ -146,5 +160,6 @@ Referências técnicas: [scikit-learn — práticas e vazamento](https://scikit-
 | 12/10/2026 | Bruno implementou e validou a potência mecânica de rotação na P05, com conversão rpm para rad/s. Após revisão de ec4e8e6, atualizou as saídas no commit 25f65ba. Orion reproduziu as 19 células, conferiu a transformação e a preservação dos dados, integrou o PR #23 em develop preservando a branch e encerrou a issue #11. Próxima etapa: P06. |
 | 12/10/2026 | Bruno escolheu três dummies para tipo e discutiu as limitações de SMOTE e under sampling. Questionou a necessidade de reamostragem; após conferir a exigência do enunciado e a possibilidade de redução parcial, adotou Random Under Sampling com razão falhas/normais 0,25. |
 | 13/10/2026 | Bruno concluiu o StandardScaler nas contínuas do KNN, inseriu os textos das Fases 4 e 5 e enviou a P06 na branch sincronizada. Orion obteve ae17ebc pelo remoto, reproduziu as 24 células, integrou o PR #25 em develop preservando a branch e encerrou a issue #12. Próxima etapa: P07. |
+| 13/10/2026 | Bruno implementou KNN com K=3/5/7 e informou as acurácias, discutiu a sensibilidade a erros locais e a limitação de comparar treino reamostrado com teste original e inseriu os dois textos da P07. Antes de enviar status/diff e commit, decidiu abrir outro Work. Orion registrou o checkpoint local sem tratar a P07 como revisada ou integrada. O pedido de ensino avançado após o projeto foi registrado na P10 e recebeu um lembrete por evento. |
 
 Atualizar o estado ao encerrar uma demanda. Acrescentar ao registro somente decisões ou intervenções que mudem a construção. Em um novo Work, ler este documento, o enunciado e a issue ativa, conferir o estado remoto e retomar a próxima ação.
