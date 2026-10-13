@@ -8,3 +8,7 @@ __pycache__/
 # Ambientes virtuais locais
 .venv/
 venv/
+
+# Arquivos auxiliares do Jupyter e do Anaconda
+.virtual_documents/
+anaconda_projects/

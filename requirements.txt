@@ -1,0 +1,14 @@
+# Python utilizado: 3.13.14
+
+# Analise, modelagem e apresentacao
+numpy==2.5.1
+pandas==3.0.5
+matplotlib==3.11.1
+seaborn==0.13.2
+scikit-learn==1.9.0
+imbalanced-learn==0.14.2
+Jinja2==3.1.6
+
+# Execucao do notebook
+jupyterlab==4.6.2
+ipykernel==7.3.0
