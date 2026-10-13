@@ -4,7 +4,7 @@
 **Autor da implementação:** Bruno Miguel Corrêa  
 **Responsável pelo roteiro e orientação:** Orion, com assistência de IA  
 **Preparado em:** 13/10/2026  
-**Situação:** R00 concluída para o anexo de 13/10/2026; R01–R16 pendentes.
+**Situação:** R00 e R01 concluídas; R02 em andamento; R03–R16 pendentes.
 
 ## 1. Objetivo e limites
 
@@ -419,8 +419,8 @@ Consultadas na preparação; servem como apoio à revisão, sem substituir o enu
 | Etapa | Situação | Evidência de encerramento |
 | --- | --- | --- |
 | R00 | Concluída | Anexo manutencao_preditiva(4).ipynb, 13/10/2026; comparação integral com P09. |
-| R01 | Pendente | — |
-| R02 | Pendente | — |
+| R01 | Concluída | Imports e organização revisados na conversa; funcionamento e aplicação confirmados por Bruno. |
+| R02 | Em andamento | Revisão da inspeção e do diagnóstico de ausências iniciada. |
 | R03 | Pendente | — |
 | R04 | Pendente | — |
 | R05 | Pendente | — |
@@ -449,3 +449,13 @@ A nova célula de matrizes tem execution_count nulo e nenhuma saída salva. Usa 
 As 30 células anteriores têm contadores 1–30 e nenhuma saída de erro salva. Isso não comprova execução integral da versão ampliada em kernel limpo. Nesta etapa foram inspecionados conteúdo, ordem, diferenças e metadados; o notebook não foi executado novamente nem alterado.
 
 Usar o anexo como fonte da implementação atual e conservar os resultados da conversa apenas como referências a reconciliar. Conferir imports na R01; deduplicação na R04; recuperar a avaliação complementar na R11; atualizar o veredito na R12. Não repetir a correção da introdução já aplicada. Próxima etapa: R01.
+
+### Encerramento da R01 e início da R02 — 13/10/2026
+
+Bruno apresentou a célula inicial e corrigiu recall_score, importou sklearn e imblearn para exibir suas versões e confirmou o funcionamento. Foram orientadas a remoção de Path e dos prints de diretório/separador, a correção do comentário de configuração visual e a inclusão das versões de Python e das bibliotecas de modelagem. A introdução revisada já estava no anexo e não foi reescrita novamente.
+
+Bruno confirmou a reorganização: Fontes do projeto permanece como a célula Markdown de referências; o novo título Preparação do ambiente e a célula de imports/versões/configuração antecedem a Fase 1. A leitura do CSV e head permanecem na inspeção inicial.
+
+Aceite nesta etapa baseado nos trechos apresentados e nas confirmações de Bruno, sem nova versão integral salva do notebook, valores das versões ou nova execução integral enviados. As próximas etapas e a validação final deverão conferir o arquivo efetivamente salvo. Nenhuma célula foi editada por Orion.
+
+R02 iniciada: dimensões e relação entre 14 campos/13 colunas já têm explicação; tipos, describe e papel das colunas estão presentes no anexo-base. Primeiro recorte operacional: tornar autoexplicativa a saída do número de medidas ausentes por registro, preservando as contagens calculadas e seu significado.
