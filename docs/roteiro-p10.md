@@ -4,7 +4,7 @@
 **Autor da implementação:** Bruno Miguel Corrêa  
 **Responsável pelo roteiro e orientação:** Orion, com assistência de IA  
 **Preparado em:** 13/10/2026  
-**Situação:** roteiro preparado; nenhuma etapa de aplicação iniciada.
+**Situação:** R00 concluída para o anexo de 13/10/2026; R01–R16 pendentes.
 
 ## 1. Objetivo e limites
 
@@ -418,7 +418,7 @@ Consultadas na preparação; servem como apoio à revisão, sem substituir o enu
 
 | Etapa | Situação | Evidência de encerramento |
 | --- | --- | --- |
-| R00 | Pendente | — |
+| R00 | Concluída | Anexo manutencao_preditiva(4).ipynb, 13/10/2026; comparação integral com P09. |
 | R01 | Pendente | — |
 | R02 | Pendente | — |
 | R03 | Pendente | — |
@@ -437,3 +437,15 @@ Consultadas na preparação; servem como apoio à revisão, sem substituir o enu
 | R16 | Pendente | — |
 
 Em cada encerramento, registrar de forma curta a versão revisada, mudanças materiais, verificações e próxima etapa. A simples aplicação de uma instrução não constitui aceite sem conferir sua evidência.
+
+### Encerramento da R00 — 13/10/2026
+
+Versão de trabalho: anexo **manutencao_preditiva(4).ipynb**, enviado por Bruno na conversa. SHA-256: **5b35e9bcaba6140a507b81f6ad89364074ae0e2fed0d2be70a3753d1fab67bfd**. Origem informada pelo terminal: branch local docs/p10-entrega-final; notebook é o único arquivo rastreado modificado, com 29 inserções e duas exclusões. Pastas não rastreadas: .virtual_documents/ e anaconda_projects/, reservadas à R15.
+
+Comparação com o notebook da P09 no commit f0c2b9051f6687a8d41a7a75cc1822b7ae3e4db5: 58 para 59 células; 30 para 31 células de código. Exatamente uma célula existente foi modificada — introdução com tempo verbal atualizado — e uma célula foi acrescentada — previsões e matrizes. As outras 57 células preservam seu código/texto; nenhuma foi removida.
+
+A nova célula de matrizes tem execution_count nulo e nenhuma saída salva. Usa confusion_matrix, mas o import dessa função não aparece no arquivo. Precisão, recall, tabela consolidada e veredito ampliado apresentados/discutidos na conversa não estão neste anexo. O veredito continua sendo o da P09. A operação drop_duplicates também permanece ausente.
+
+As 30 células anteriores têm contadores 1–30 e nenhuma saída de erro salva. Isso não comprova execução integral da versão ampliada em kernel limpo. Nesta etapa foram inspecionados conteúdo, ordem, diferenças e metadados; o notebook não foi executado novamente nem alterado.
+
+Usar o anexo como fonte da implementação atual e conservar os resultados da conversa apenas como referências a reconciliar. Conferir imports na R01; deduplicação na R04; recuperar a avaliação complementar na R11; atualizar o veredito na R12. Não repetir a correção da introdução já aplicada. Próxima etapa: R01.
